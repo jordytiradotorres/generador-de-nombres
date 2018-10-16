@@ -1,0 +1,79 @@
+html {
+    font-size: 16px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+
+body {
+    background: #2193b0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2193b0, #6dd5ed);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2193b0,#6dd5ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */         
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1 {
+    color: #ffffff;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+}
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, .5);
+    padding: 1rem 0;
+}
+
+.contenedor {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+form {
+    padding: 3rem;
+}
+form label {
+    font-weight: bold;
+}
+
+.listado {
+    padding: 1rem 0;
+    height: 100%;
+    max-height: 600px;
+    overflow-y: auto;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.nombre {
+    margin-bottom: .5rem;
+}
+.loader {
+    margin: auto;
+    display: none;
+    height: auto;
+    max-width: 230px;
+}
