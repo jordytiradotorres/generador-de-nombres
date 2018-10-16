@@ -16,7 +16,7 @@ const cargarNombres = e => {
 
   // la url
   let url = ''
-  url += 'http://uinames.com/api/?'
+  url += 'https://uinames.com/api/?'
 
   // si hay origen agregalo ala url
   if (origenSeleccionado !== '') {
