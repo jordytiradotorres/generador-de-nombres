@@ -33,23 +33,15 @@ const cargarNombres = e => {
     url += `amount=${numeroNombres}&`
   }
 
-  // cargar AJAX
-  const xhr = new XMLHttpRequest()
-
-  xhr.open('GET', url, true)
-
-  xhr.addEventListener('load', e => {
-    switch (e.target.status) {
-      case 200:
-        const data = JSON.parse(e.target.responseText)
-        mostrarResultado(data)
-        break
-      case 400: listado.textContent = 'Solicitud incorrecta'; listado.style.color = '#000'; break
-      case 401: listado.textContent = 'No estas autorizado para esta acción'; listado.style.color = '#000'; break
-      case 404: listado.textContent = 'No existe información, página 404'; listado.style.color = '#000'; break
-      case 500: listado.textContent = 'Error del servidor'; listado.style.color = '#000'; break
-    }
-  })
+  fetch(url)
+    .then(function (respuesta) {
+      return respuesta.json()
+    })
+    .then(function (data) {
+      mostrarResultado(data)
+    }).catch(function (error) {
+      console.log(error)
+    })
 
   const mostrarResultado = (data) => {
     listado.innerHTML = ''
@@ -65,8 +57,6 @@ const cargarNombres = e => {
     listado.style.backgroundColor = '#2193b0'
     listado.appendChild(nombresFragment)
   }// fin de mostrarResultado
-
-  xhr.send()
 } // fin de cargarNombres
 
 formulario.addEventListener('submit', cargarNombres)
